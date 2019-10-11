@@ -8,17 +8,9 @@
 body {
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(
-    45deg,
-    #845ec2,
-    #d65db1,
-    #ff6f91,
-    #ff9671,
-    #ffc75f,
-    #f9f871
-  );
+  background: linear-gradient(45deg, #ede574, #e1f5c4);
   background-size: 400%;
-  animation: bg-animation 60s infinite alternate;
+  animation: bg-animation 2s infinite alternate;
 }
 @keyframes bg-animation {
   0% {
@@ -51,7 +43,7 @@ body {
   width: 100%;
   padding: 1rem;
   transition: transform 0.5s;
-  background: #c6baee;
+  background: #bde0d8;
   transform-style: preserve-3d;
 }
 .card .card__front,
@@ -147,7 +139,7 @@ body {
   font-weight: bold;
 }
 .panel__button:hover {
-  background: #c6baee;
+  background: #bde0d8;
 }
 .panel__button:hover button {
   color: #914f15;
@@ -183,7 +175,7 @@ body {
   background: transparent;
   color: #914f15;
   font-size: 3rem;
-  background: #c6baee;
+  background: #bde0d8;
   outline: none;
 }
 .panel--close {
@@ -199,7 +191,7 @@ body {
   transform: translateY(-59.9%);
   transition: transform 250ms;
   padding-top: 8rem;
-  background: #c6baee;
+  background: #bde0d8;
 }
 .panel--close .panel__content {
   transition: 300ms;
@@ -237,7 +229,7 @@ body {
   height: 20vh;
   margin-bottom: 5vh;
   width: 100%;
-  background-color: #c6baee;
+  background-color: #bde0d8;
   border: 0;
   padding: 1rem;
   background-size: 80%;
