@@ -7,10 +7,10 @@
 }
 body {
   height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(45deg, #ede574, #e1f5c4);
+  font-family: montserrat, Helvetica, sans-serif;
+  background: linear-gradient(45deg, #f78fb3, #3dc1d3);
   background-size: 400%;
-  animation: bg-animation 2s infinite alternate;
+  animation: bg-animation 20s infinite alternate;
 }
 @keyframes bg-animation {
   0% {
@@ -43,7 +43,7 @@ body {
   width: 100%;
   padding: 1rem;
   transition: transform 0.5s;
-  background: #bde0d8;
+  background: #63cdda;
   transform-style: preserve-3d;
 }
 .card .card__front,
@@ -65,13 +65,13 @@ body {
 .card .card__title {
   font-size: 2.5rem;
   transform: translateZ(5rem);
-  color: #914f15;
+  color: #fff;
 }
 .card .card__subtitle {
   margin-top: 1rem;
   font-size: 1rem;
   transform: translateZ(2rem);
-  color: #914f15;
+  color: #fff;
 }
 .card__avatar {
   min-width: 13rem;
@@ -79,13 +79,18 @@ body {
   height: 20vh;
   background-position: center;
   background-size: cover;
+  border-top: 0.4rem solid #f8a5c2;
+  border-bottom: 0.4rem solid #303952;
+  border-left: 0.4rem solid #c44569;
+  border-right: 0.4rem solid #574b90;
+  padding: 0.5rem;
 }
 .card:hover .card__content {
   transform: rotateX(0.5turn);
 }
 .card__back {
   transform: rotateX(0.5turn);
-  background-color: #fff4c0;
+  background-color: #63cdda;
   display: flex;
 }
 .card__list {
@@ -112,6 +117,11 @@ body {
   text-decoration: none;
   color: inherit;
 }
+@keyframes rot {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .card__item:hover {
   transform: scale(1.5);
   transition: 300ms;
@@ -121,7 +131,7 @@ body {
   margin-top: 3rem;
   width: 100%;
   height: 20vh;
-  background: #fff4c0;
+  background: #63cdda;
   display: flex;
 }
 .panel__button {
@@ -134,15 +144,15 @@ body {
   flex-grow: 1;
   border: none;
   background: transparent;
-  color: #5d995d;
+  color: #fff;
   font-size: 3rem;
   font-weight: bold;
 }
 .panel__button:hover {
-  background: #bde0d8;
+  background: #778beb;
 }
 .panel__button:hover button {
-  color: #914f15;
+  color: #fff;
 }
 .panel--expanded {
   flex-direction: column;
@@ -161,7 +171,7 @@ body {
 }
 .panel--expanded .panel__content .panel__list .panel__item {
   flex-grow: 1;
-  color: #5d995d;
+  color: #fff;
   font-size: 2rem;
   margin-top: 1rem;
 }
@@ -173,68 +183,91 @@ body {
   flex-grow: 1;
   border: none;
   background: transparent;
-  color: #914f15;
+  color: #fff;
   font-size: 3rem;
-  background: #bde0d8;
+  background: #63cdda;
   outline: none;
 }
 .panel--close {
   overflow: hidden;
 }
-.panel--close:hover,
-.panel--close:focus {
-  transition: transform 250ms;
-  color: #914f15;
-}
-.panel--close:hover .panel__button,
-.panel--close:focus .panel__button {
-  transform: translateY(-59.9%);
-  transition: transform 250ms;
-  padding-top: 8rem;
-  background: #bde0d8;
-}
 .panel--close .panel__content {
   transition: 300ms;
   display: none;
 }
-.carousel {
+.swiper-container {
   margin-top: 3rem;
-  height: 45vh;
   width: 100%;
+  height: 45vh;
+}
+.slide {
   display: flex;
-  flex-wrap: nowrap;
-}
-.carousel .carousel__controller {
-  min-width: 13rem;
-  height: 45vh;
-  margin-right: 3rem;
-}
-.carousel .carousel__container {
-  overflow-x: hidden;
-  height: 45vh;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
+  height: 100%;
   width: 100%;
-  width: calc($n * 100%);
-  overflow-y: hidden;
+  box-sizing: border-box;
 }
-.carousel .carousel__container img {
-  transform: translate(-25%);
-  min-width: 100%;
-  width: 100%;
-  width: 25%;
-  pointer-events: none;
+.slide:hover .slide__button {
+  transform: translateY(0);
+  transition: transform 400ms;
 }
-.carousel__button {
-  height: 20vh;
-  margin-bottom: 5vh;
-  width: 100%;
-  background-color: #bde0d8;
+.slide__button:hover .slide__link {
+  color: #63cdda;
+  background-color: #fff;
+  transition: 0.8s;
+}
+.slide__button:hover {
+  background-color: #fff;
+  transition: 0.8s;
+}
+.slide:hover .slide__title {
+  transform: translateY(-30px);
+  transition: transform 200ms;
+}
+.slide:hover .slide__content {
+  transform: translateY(-50px);
+  transition: transform 300ms;
+}
+.slide__title {
+  color: #fff;
+  font-size: 3rem;
+  margin: 3rem;
+  margin-top: 5rem;
+}
+.slide__content {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-top: 2rem;
+  margin: 3rem;
+  overflow: hidden;
+  text-align: left;
+  height: 15rem;
+  max-width: 75%;
+}
+.slide__button {
+  cursor: pointer;
+  padding: 3rem;
   border: 0;
-  padding: 1rem;
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  transform-style: preserve-3d;
+  border: 0.5rem solid #778beb;
+  border-bottom: 0;
+  background-color: transparent;
+  transform: translateY(200px);
+  transition: 0.8s;
+  display: flex;
+  padding: 0;
+}
+.slide__link {
+  margin: 3rem;
+  flex-grow: 1;
+  font-size: 3rem;
+  color: #fff;
+  text-decoration: none;
+}
+.slide__background {
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  filter: blur(5px) brightness(0.4);
 }

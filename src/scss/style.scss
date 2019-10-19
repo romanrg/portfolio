@@ -3,12 +3,15 @@
     margin: 0;
     list-style: none;
 }
-$bg-1-blue: rgb(189, 224, 216);
+$bg-1: rgb(189, 224, 216);
+$bg-2:#63cdda;
+$bg-2-light: #778beb;
+$color: white;
 $linear: linear-gradient(
     
          45deg,
-         #EDE574,
-         #E1F5C4
+         #f78fb3,
+         #3dc1d3
          /*
        #ff6f91,
        #ff9671,
@@ -19,10 +22,10 @@ $linear: linear-gradient(
 
 body {
     height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: montserrat, Helvetica, sans-serif;
     background: $linear;
     background-size: 400%;
-    animation: bg-animation 2s infinite alternate; 
+    animation: bg-animation 20s infinite alternate; 
 }
 
 @keyframes bg-animation {
@@ -64,7 +67,7 @@ body {
         width: 100%;
         padding: 1rem;
         transition: transform 0.5s;
-        background: $bg-1-blue;
+        background: $bg-2;
         transform-style: preserve-3d;
         
         
@@ -92,13 +95,13 @@ body {
     .card__title {
         font-size: 2.5rem;
         transform: translateZ(5rem);
-        color: #914f15;
+        color: $color;
     }
     .card__subtitle {
         margin-top: 1rem;
         font-size: 1rem;
         transform: translateZ(2rem);
-        color: #914f15;
+        color: $color;
     }
 }
 .card__avatar {
@@ -106,7 +109,14 @@ body {
     margin-right: 3rem;
     height: 20vh;     
     background-position: center;
-    background-size: cover;            
+    background-size: cover; 
+    //border-top: 0.4rem solid #f8a5c2;
+   // border-bottom: 0.4rem solid #303952;
+    //border-left: 0.4rem solid #c44569;
+    //border-right: 0.4rem solid #574b90;
+    padding: 0.5rem;
+    
+    //animation: rot 2s linear infinite;           
 }
 
 .card:hover .card__content {   
@@ -115,7 +125,7 @@ body {
 
 .card__back {
     transform: rotateX(0.5turn);
-    background-color: rgb(255, 244, 192);
+    background-color: $bg-2;
     display: flex;
 }
 
@@ -140,13 +150,24 @@ body {
         justify-content: center;
         align-items: center;
         display: flex;
+        
+        
         .card__link {
             text-transform: uppercase;
             text-decoration: none;
             color: inherit;            
         }
+        img {
+            
+        }
 
     }       
+}
+
+@keyframes rot {
+ to {
+     transform: rotate(360deg);
+ }
 }
 
 
@@ -170,7 +191,7 @@ body {
     margin-top: 3rem;
     width: 100%;
     height: 20vh;
-    background: rgb(255, 244, 192);
+    background: $bg-2;
 
     display: flex;
     //
@@ -185,18 +206,17 @@ body {
         flex-grow: 1;
         border: none;
         background: transparent;
-        color: #5d995d;
+        color: $color;
         font-size: 3rem;
         font-weight: bold;
         
     }
     &:hover {
-        background: $bg-1-blue;               
-        
+        background: $bg-2-light;       
         
         button {
 
-            color: #914f15; 
+            color: $color; 
         }
     }    
 
@@ -216,7 +236,7 @@ body {
             flex-direction: column;
             .panel__item {
                 flex-grow: 1;
-                color: #5d995d;;
+                color: $color;
                 font-size: 2rem; 
                 margin-top: 1rem;           
             }    
@@ -229,9 +249,9 @@ body {
             flex-grow: 1;
             border: none;
             background: transparent;
-            color: #914f15;
+            color: $color;
             font-size: 3rem;
-            background: $bg-1-blue;
+            background: $bg-2-light;
             outline: none;
         }           
     
@@ -240,33 +260,13 @@ body {
 }
 .panel--close {
     overflow: hidden;    
-    &:hover,
-    &:focus {        
-        transition: transform 250ms;
-        color: #914f15; 
-        .panel__button {            
-            transform:translateY(-59.9%);
-            transition: transform 250ms; 
-            padding-top: 8rem;     
-            background: $bg-1-blue;   
-                   
-        }        
-    }
+    
     .panel__content {        
         transition: 300ms;
         display: none;
         
     }
-    /*
-    &::after {
-        content: '+';
-        font-size: 10rem;
-        display: none;
-        position: relative;
-        top: 0;
-        left: -6rem;
-    }
-    */
+    
 }
 
 
@@ -277,71 +277,90 @@ body {
 
 
 /*Carousel*/
-$n: 4;  
-$i: 1;
-$res: $i / $n * -100%;
-.carousel {    
+
+.swiper-container {
     margin-top: 3rem;
-    height: 45vh;
-    width: 100%;    
-    display: flex;
-    flex-wrap: nowrap;
-    //background-color: rgb(255, 244, 192);
-    
-
-    .carousel__controller {        
-        min-width: 13rem;
-        height: 45vh;
-        margin-right: 3rem;       
-        
-    }
-
-    .carousel__container {   
-        overflow-x: hidden;
-        height: 45vh;   
-        display: flex;  
-        align-items: center; 
-        width: 100%;
-        width: calc($n * 100%);  
-        overflow-y: hidden; 
-                
-        
-        img {     
-            transform: translate($res);       
-            min-width: 100%; 
-            width: 100%;  
-            width: 100% / $n;   
-            pointer-events: none;
-            
-                                      
-        }
-    }
-}
-
-.carousel__button {
-    height: 20vh;
-    margin-bottom: 5vh;
     width: 100%;
-    background-color: $bg-1-blue;
-    border: 0;
-    padding: 1rem;    
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: center;
-    transform-style: preserve-3d;
-    /*
-    &:focus {
-        transition: transform 300ms;
-        transform: rotateY(1turn);
-    }
-    */
+    height: 45vh;
 }
 
 
 
+.slide {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;  
+    box-sizing: border-box;
+}
 
+.slide:hover .slide__button{
+    transform: translateY(0);
+    transition: transform 400ms;
+}
 
+.slide__button:hover .slide__link{
+    color: $bg-2;
+    background-color: $color;
+    transition:  0.8s;
+}
+.slide__button:hover {
+    background-color: $color;
+    transition: 0.8s;
+}
+.slide:hover .slide__title{
+    transform: translateY(-30px);
+    transition: transform 200ms;
+}
+.slide:hover .slide__content {
+    transform: translateY(-50px);
+    transition: transform 300ms;
+}
 
+.slide__title {
+    color: $color;
+    font-size: 3rem;
+    margin: 3rem;
+    margin-top: 5rem;
+}
+.slide__content {
+    font-size: 1.5rem;
+    color: $color;
+    margin-top: 2rem;
+    margin: 3rem;
+    overflow: hidden;
+    text-align: left;
+    height: 15rem;
+    max-width: 75%;
+}
+.slide__button {
+    cursor: pointer;
+    padding: 3rem;
+    border: 0;
+    border: 0.5rem solid $bg-2-light;
+    border-bottom: 0;
+    background-color: transparent;
+    transform: translateY(200px);
+    transition: 0.8s;
+    display: flex;
+    padding: 0;
+}
+
+.slide__link {
+    margin: 3rem;
+    flex-grow: 1;
+    font-size: 3rem;
+    color: $color;
+    text-decoration: none;
+}
+
+.slide__background {    
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: blur(5px) brightness(0.4);
+}
 
 /*###############*/

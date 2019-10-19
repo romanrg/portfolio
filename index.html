@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./node_modules/swiper/css/swiper.min.css">
     <link rel="stylesheet" href="./dist/style.css">
     <title>Portfolio</title>
 </head>
@@ -12,7 +13,7 @@
         <header class="header">
             <div class="header__card card">
                 <div class="card__avatar" style="background-image: url('assets/img/avatar__image.jpg');">
-
+                        
                 </div>
                 <div class="card__content">
                     <div class="card__front">
@@ -58,20 +59,64 @@
                 </div>
             </section>
             <section class="carousel">
-                <div class="carousel__controller">
-                    <button style="background-image: url('assets/svg/left-chevron.svg');" class="carousel__button carousel__button--left"></button>
-                    <button style="background-image: url('assets/svg/right-chevron.svg');" class="carousel__button carousel__button--right"></button>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="slide">
+                                <img class="slide__background" src="./assets/img/the_yallow.JPG" alt="slide background">
+                                <h3 class="slide__title">The Yallow</h3>
+                                <p class="slide__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt at quaerat aliquam? Dignissimos tenetur adipisci laborum facere repellat mollitia suscipit maiores, vitae sequi at quasi iure velit, corrupti ullam itaque.</p>
+                                <button class="slide__button">
+                                    <a href="#" class="slide__link">
+                                        Grab this project.
+                                    </a>
+                                </button>
+                            </div>                            
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide">
+                                <img class="slide__background" src="./assets/img/repair_design.JPG" alt="slide background">
+                                <h3 class="slide__title">Repair Design</h3>
+                                <p class="slide__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt at quaerat aliquam? Dignissimos tenetur adipisci laborum facere repellat mollitia suscipit maiores, vitae sequi at quasi iure velit, corrupti ullam itaque.</p>
+                                <button class="slide__button">
+                                    <a href="#" class="slide__link">
+                                        Grab this project.
+                                    </a>
+                                </button>
+                            </div>    
+                        </div> 
+                    </div>
                 </div>
-                <div class="carousel__container">
-                    <img src="./assets/img/the_yallow.JPG" alt="project 1">
-                    <img src="./assets/img/repair_design.JPG" alt="project 2">
-                    <img src="./assets/img/the_yallow.JPG" alt="project 1">
-                    <img src="./assets/img/repair_design.JPG" alt="project 2">
-                </div>
-            </section>
+            </section>            
         </main>
-        <footer></footer>
-    </div> 
-    <script src="./dist/bundle.js"></script>   
+        <footer>
+                
+        </footer>
+    </div>
+    <script src="./node_modules/swiper/js/swiper.min.js"></script> 
+    <script src="./dist/bundle.js"></script> 
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+          // Optional parameters
+          direction: 'horizontal',
+          loop: true,
+      
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+          },
+      
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+      
+          // And if we need scrollbar
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+        })
+        </script>  
 </body>
 </html>
