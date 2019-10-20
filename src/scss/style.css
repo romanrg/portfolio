@@ -79,10 +79,6 @@ body {
   height: 20vh;
   background-position: center;
   background-size: cover;
-  border-top: 0.4rem solid #f8a5c2;
-  border-bottom: 0.4rem solid #303952;
-  border-left: 0.4rem solid #c44569;
-  border-right: 0.4rem solid #574b90;
   padding: 0.5rem;
 }
 .card:hover .card__content {
@@ -185,7 +181,7 @@ body {
   background: transparent;
   color: #fff;
   font-size: 3rem;
-  background: #63cdda;
+  background: #778beb;
   outline: none;
 }
 .panel--close {
@@ -208,7 +204,7 @@ body {
   box-sizing: border-box;
 }
 .slide:hover .slide__button {
-  transform: translateY(0);
+  transform: translateY(-70px);
   transition: transform 400ms;
 }
 .slide__button:hover .slide__link {
@@ -241,7 +237,6 @@ body {
   margin: 3rem;
   overflow: hidden;
   text-align: left;
-  height: 15rem;
   max-width: 75%;
 }
 .slide__button {
@@ -270,4 +265,7 @@ body {
   height: 100%;
   position: absolute;
   filter: blur(5px) brightness(0.4);
+}
+.slide__content {
+  min-height: 6rem;
 }

@@ -157,9 +157,7 @@ body {
             text-decoration: none;
             color: inherit;            
         }
-        img {
-            
-        }
+  
 
     }       
 }
@@ -295,7 +293,7 @@ body {
 }
 
 .slide:hover .slide__button{
-    transform: translateY(0);
+    transform: translateY(-70px);
     transition: transform 400ms;
 }
 
@@ -330,7 +328,7 @@ body {
     margin: 3rem;
     overflow: hidden;
     text-align: left;
-    height: 15rem;
+   
     max-width: 75%;
 }
 .slide__button {
@@ -362,5 +360,7 @@ body {
     position: absolute;
     filter: blur(5px) brightness(0.4);
 }
-
+.slide__content {
+    min-height: 6rem;
+}
 /*###############*/
