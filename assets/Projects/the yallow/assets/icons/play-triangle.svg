@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27" width="27" height="27">
+	<defs>
+		<image width="27" height="27" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbBAMAAAB/+ulmAAAAAXNSR0IB2cksfwAAAA9QTFRF9cUG9cUG9cUG9cUG9cUG88fOpwAAAAV0Uk5T9Pz7+P/7mUE6AAAAGklEQVR4nGNgVEIARQYGExckYDDKpRMXNRYAUDhcpWeq1bcAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { opacity: 0.369;fill: #ffffff } 
+	</style>
+	<g id="player">
+		<use id="Layer 16" style="opacity: 0.369" href="#img1" x="0" y="0" />
+		<path id="Shape 8" class="shp0" d="M10.01 6.06C10.01 5.61 10.23 5.29 10.68 5.1C11.14 4.92 11.54 4.99 11.9 5.33L19.68 12.74C19.91 12.95 20.01 13.2 20 13.5C20 13.78 19.89 14.03 19.68 14.23L11.9 21.67C11.54 22.01 11.14 22.08 10.68 21.89C10.23 21.71 10.01 21.38 10.01 20.91L10.01 6.06L10.01 6.06Z" />
+	</g>
+</svg>

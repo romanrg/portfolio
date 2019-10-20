@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" width="10" height="10">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { opacity: 0.702;fill: #ffffff } 
+	</style>
+	<g id="sec_1">
+		<g id="block_1">
+			<path id="Shape 11" class="shp0" d="M9.72 6.33L6.22 6.33L6.22 9.83L3.59 9.83L3.59 6.33L0.08 6.33L0.08 3.7L3.59 3.7L3.59 0.19L6.22 0.19L6.22 3.7L9.72 3.7L9.72 6.33Z" />
+		</g>
+	</g>
+</svg>

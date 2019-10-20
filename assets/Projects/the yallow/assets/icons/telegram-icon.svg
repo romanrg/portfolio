@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 69 70" width="69" height="70">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #f5c506 } 
+	</style>
+	<g id="mid_bar">
+		<path id="Shape 4" class="shp0" d="M50.72 43.24L50.72 63.31L41.88 51.94L23.52 70L1 1L69 25.25L50.72 43.24ZM7.37 7.55L46.05 47.84L50.58 43.38L7.37 7.55Z" />
+	</g>
+</svg>

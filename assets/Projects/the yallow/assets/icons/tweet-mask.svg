@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 43" width="285" height="43">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { opacity: 0.6;fill: #ffffff } 
+	</style>
+	<g id="twitter">
+		<g id="tweet_bubble">
+			<path id="Rounded Rectangle 2 copy 2" class="shp0" d="M20 1L275 1C280.52 1 285 5.48 285 11L285 33C285 38.52 280.52 43 275 43L20 43C14.48 43 10 38.52 10 33L10 11C10 5.48 14.48 1 20 1ZM10 21C10 21 7.5 28.5 2 29C-3.5 29.5 14 36 14 36L14 22" />
+		</g>
+	</g>
+</svg>
