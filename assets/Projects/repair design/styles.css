@@ -107,7 +107,8 @@ body {
   padding: 20px;
   margin-bottom: 10px;
   text-transform: uppercase;
-  font-family: "yeseva"
+  font-family: "yeseva";
+  z-index: 1;
 }
 .wrapper__change--mobile {
     right: 10px;
